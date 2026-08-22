@@ -1,0 +1,2 @@
+# Lazy.nvim plugin installs (not the lockfile, just avoid stray junk)
+.luarc.json
