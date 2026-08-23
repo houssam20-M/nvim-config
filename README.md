@@ -52,7 +52,7 @@ A modern Neovim setup built from scratch, configured for C (42 School projects),
 ## Installation
 
 ```bash
-git clone <this-repo-url> ~/.config/nvim
+git clone <https://github.com/houssam20-M/nvim-config.git> ~/.config/nvim
 nvim
 ```
 
