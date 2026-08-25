@@ -27,18 +27,19 @@ return {
         args = { "-i", "dap" },
       }
 
-      dap.configurations.c = {
-        {
-          name = "Launch (gdb)",
-          type = "gdb",
-          request = "launch",
-          program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-          end,
-          cwd = "${workspaceFolder}",
-          stopAtBeginningOfMainSubprogram = false,
-        },
+      local gdb_config = {
+        name = "Launch (gdb)",
+        type = "gdb",
+        request = "launch",
+        program = function()
+          return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+        end,
+        cwd = "${workspaceFolder}",
+        stopAtBeginningOfMainSubprogram = false,
       }
+
+      dap.configurations.c = { gdb_config }
+      dap.configurations.cpp = { gdb_config }
 
       vim.keymap.set("n", "<F5>", dap.continue, {})
       vim.keymap.set("n", "<F10>", dap.step_over, {})
