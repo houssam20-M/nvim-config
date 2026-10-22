@@ -43,6 +43,9 @@ A modern Neovim setup built from scratch, configured for C (42 School projects),
 
 - **Neovim >= 0.12**
 - **git**
+- **[tree-sitter CLI](https://github.com/tree-sitter/tree-sitter)** — required by `nvim-treesitter` to compile parsers
+  - install via `cargo install tree-sitter-cli`, `npm install -g tree-sitter-cli`, or a [prebuilt binary](https://github.com/tree-sitter/tree-sitter/releases)
+- **A C compiler** (`gcc` or `clang`) **+ make** — to build parsers and `telescope-fzf-native`
 - **[ripgrep](https://github.com/BurntSushi/ripgrep)** — for Telescope live grep
 - **A [Nerd Font](https://www.nerdfonts.com/)** installed and set in your terminal — for file icons
 - **Node.js + npm** — required by `pyright` (installed automatically via Mason)
@@ -57,6 +60,8 @@ nvim
 ```
 
 On first launch, [lazy.nvim](https://github.com/folke/lazy.nvim) will automatically bootstrap itself and install every plugin. Mason will then install the language servers (`clangd`, `lua_ls`, `pyright`) in the background.
+
+Treesitter parsers are compiled on first launch as well, which is why the `tree-sitter` CLI must be on your `PATH` beforehand.
 
 ## Keymaps
 
